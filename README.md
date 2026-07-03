@@ -90,8 +90,3 @@ An interactive app (embedded in the final notebook cell, intended to be extracte
 - `streamlit`
 - `joblib`
 
-## Notes
-
-- The train/test split is **chronological** (not random), which is appropriate for time-series data but means results are sensitive to which time period falls into the test set.
-- The Streamlit app retrains all models on load (cached via `@st.cache_resource`) rather than loading pre-trained `.pkl` files, so the notebook's saved model artifacts and the app's models are trained independently.
-- The 7-day forecast page uses a naive strategy: exogenous features (DJIA, gold, etc.) are held constant at their last known value while the WTI price is forecast iteratively.
